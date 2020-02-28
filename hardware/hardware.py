@@ -97,20 +97,20 @@ class Hardware:
         GPIO.setup(Broche.SELECTOR_VMAX_IN_POSITION_10.value,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 
 #********************************************** SHUTDOWN **********************************************
-        GPIO.add_event_detect(Broche.BUTTON_STOP, GPIO.BOTH, callback=self.shutdown, bouncetime=200)
-    DURATION_OF_PRESS = 3
-    def shutdown(self):
-        import os
-        global start
-        global end
-        if GPIO.input(Broche.BUTTON_STOP) == GPIO.HIGH:
-            start = time.time()
-        if GPIO.input(Broche.BUTTON_STOP) == GPIO.LOW:
-            end = time.time()
-            elapsed = end - start
-            print(elapsed)
-            if elapsed >= self.DURATION_OF_PRESS :
-                os.system("shutdown now -h")
+#        GPIO.add_event_detect(Broche.BUTTON_STOP, GPIO.BOTH, callback=self.shutdown, bouncetime=200)
+#    DURATION_OF_PRESS = 3
+#    def shutdown(self):
+#        import os
+ #       global start
+  #      global end
+#        if GPIO.input(Broche.BUTTON_STOP) == GPIO.HIGH:
+ #           start = time.time()
+  #      if GPIO.input(Broche.BUTTON_STOP) == GPIO.LOW:
+#            end = time.time()
+ #           elapsed = end - start
+ #           print(elapsed)
+ #           if elapsed >= self.DURATION_OF_PRESS :
+  #              os.system("shutdown now -h")
 
 
 #********************************************** SELECTOR **********************************************
