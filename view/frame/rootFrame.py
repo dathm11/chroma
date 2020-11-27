@@ -41,7 +41,10 @@ class RootFrame(Frame):
         if platform.system() != 'Windows':
             photo =  ImageTk.PhotoImage(Image.open("/home/pi/Desktop/chroma/yiec_min.jpg"))
             self.photo = photo
+            photo.bind('<Button-1>', toggleIsShowDebugPanel)
+            
         else:
             photo =  ImageTk.PhotoImage(Image.open("yiec_min.jpg"))
             self.photo = photo
+            photo.bind('<Button-1>', toggleIsShowDebugPanel)
         
